@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<!--https://www.studentstutorial.com/php/login-logout-with-session -->
-<!--Libro bien subido o mal usar toasts https://getbootstrap.com/docs/5.0/components/toasts/ -->
-<!--Las ayudas con tooltip https://getbootstrap.com/docs/5.0/components/tooltips/ -->
-<!--Para editar los libros? https://getbootstrap.com/docs/5.0/components/modal/ -->
-<!--Editar los libros? con onchange-->
+<!-- https://www.studentstutorial.com/php/login-logout-with-session -->
+<!-- Libro bien subido o mal usar toasts https://getbootstrap.com/docs/5.0/components/toasts/ -->
+<!-- Las ayudas con tooltip https://getbootstrap.com/docs/5.0/components/tooltips/ -->
+<!-- Para editar los libros? https://getbootstrap.com/docs/5.0/components/modal/ -->
+<!-- Editar los libros? con onchange -->
 <!-- https://getbootstrap.com/docs/5.0/forms/overview/ -->
 <!-- https://getbootstrap.com/docs/5.0/examples/dashboard/ -->
+<!-- Admin panel por permisos de usuario (Estilo un usuario puede SOLO agregar libros o puede agregar libros y categorias...) -->
+<!-- Cambios en los ajustes personales (Ajustes, hacer un dark mode y un light mode...) -->
+<!-- Que cuando agregas un libro o categoria se te actualice automaticamente la lista / se agrege la nueva info -->
 <?php
   session_start();
   if (!(isset($_SESSION['ID']))) {
-    Header('Location:admin/login.php');
+    Header('Location:login.php');
   }
 ?>
 <html>
@@ -22,7 +25,7 @@
       <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Biblioteca Virtual</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="admin/logout.php">Log out</a>
+          <a class="nav-link" href="logout.php">Cerrar sesion</a>
         </li>
       </ul>
     </header>

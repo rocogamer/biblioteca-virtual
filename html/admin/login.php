@@ -1,4 +1,4 @@
-<!--https://www.studentstutorial.com/php/login-logout-with-session-->
+<!-- Sistema de contraseña olvidada -->
 <?php
     include '../../phplibraries/database.php';
     /* 
@@ -15,6 +15,6 @@
         }
     }
     if (isset($_SESSION['ID'])) {
-        Header('Location:admin/admin.php');
+        Header('Location:admin.php');
     } */
 ?>
