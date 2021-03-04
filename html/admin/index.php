@@ -27,6 +27,9 @@
       <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Biblioteca Virtual</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
+          <p>Sesion iniciada con: <?php echo $_SESSION["name"]; ?></p>
+        </li>
+        <li class="nav-item text-nowrap">
           <a class="nav-link" href="logout.php">Cerrar sesion</a>
         </li>
       </ul>
@@ -108,6 +111,27 @@
             if ($_SESSION["userspermission"]) {
             ?>
               <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                  <h1 class="h2">Creacion de usuarios</h1>
+                </div>
+                <h2>Listado de usuarios</h2>
+                <div class="table-responsive">
+                  <table class="table table-striped table-sm">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Username</th>
+                        <th>Permiso libros</th>
+                        <th>Permiso categorias</th>
+                        <th>Permiso usuarios</th>
+                        <th>Editar usuario</th>
+                      </tr>
+                    </thead>
+                    <tbody id="userstable">
+                    </tbody>
+                  </table>
+                </div>
               </div>
             <?php
             }
@@ -118,8 +142,11 @@
       </div>
     </div>
     <script src="../js/admin.js">
+    </script>
+    <script>         
         function load() {
-            loadLogs("<?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>");
+            loadLogs("logstable", "<?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>");
+            loadUsers("userstable", "<?php echo APIADMINTOKEN;?>");
         }
 
         window.onload = load();
