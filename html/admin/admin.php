@@ -87,7 +87,7 @@
                       <th>Fecha y hora:</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="logstable">
                     <tr>
                       <td>0</td>
                       <td>Instalacion de la web</td>
@@ -122,7 +122,29 @@
         </main>
 
       </div>
-    </div> 
+    </div>
+    <script>
+        function loadLogs() {
+          var xhttp;
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("logstable").innerHTML += this.responseText;
+            }
+          };
+          xhttp.open("GET", "/API/admintools/getLogs.php", true);
+          xhttp.setRequestHeader("Authorization", "Basic " + <?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>);
+          xhttp.send();
+        }
+        function loadUsers() {
+        
+        }
+        function load() {
+            loadLogs();
+        }
+
+        window.onload = load();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
   </body>
