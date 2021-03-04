@@ -1,6 +1,6 @@
 <?php
     include('../../../phplibraries/database.php');
-    $con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWD,$DB_DB) or die('Unable To connect');
+    $con = mysqli_connect(DBHOST, DBUSR, DBPASSWD, DBNAME) or die('Unable To connect');
     $result = mysqli_query($con,"SELECT * FROM log_actions");
     if(mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) {

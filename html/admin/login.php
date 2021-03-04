@@ -3,7 +3,7 @@
     include('../../phplibraries/database.php');
     session_start();
     if(count($_POST)>0) {
-        $con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWD,$DB_DB) or die('Unable To connect');
+        $con = mysqli_connect(DBHOST, DBUSR, DBPASSWD, DBNAME) or die('Unable To connect');
         $result = mysqli_query($con,"SELECT ID,name,username,permission_users,permission_books,permission_categories FROM login_data WHERE username='" . htmlspecialchars($_POST["username"]) . "' and password='" . md5(htmlspecialchars($_POST["password"])) . "'");
         $row  = mysqli_fetch_array($result);
         if(is_array($row)) {
