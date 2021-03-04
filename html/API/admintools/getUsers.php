@@ -11,7 +11,7 @@
             echo "<td>" . $row["permission_books"] . "</td>";
             echo "<td>" . $row["permission_categories"] . "</td>";
             echo "<td>" . $row["permission_users"] . "</td>";
-            echo "<td> <button type=\"button\" onclick=\"alert('WIP')\"><i class=\"bi bi-pencil-square\"></i>Editar</button> </td>";
+            echo "<td> <button class=\"btn btn-success\" type=\"button\" onclick=\"alert('WIP')\"><i class=\"bi bi-pencil-square\"></i>Editar</button> </td>";
             echo "</tr>";
         }
     } else {
