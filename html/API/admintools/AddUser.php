@@ -1,4 +1,4 @@
 <?php
-    include '../../../phplibraries/database.php';
+    include('../../../phplibraries/database.php');
 
 ?>

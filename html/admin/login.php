@@ -1,6 +1,6 @@
 <!-- Sistema de contraseña olvidada -->
 <?php
-    include '../../phplibraries/database.php';
+    include('../../phplibraries/database.php');
     session_start();
     if(count($_POST)>0) {
         $con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWD,$DB_DB) or die('Unable To connect');
