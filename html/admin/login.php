@@ -2,7 +2,7 @@
 <?php
     include('../../phplibraries/database.php');
     session_start();
-    if(count($_POST)>0) {
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
         $con = mysqli_connect(DBHOST, DBUSR, DBPASSWD, DBNAME) or die('Unable To connect');
         $result = mysqli_query($con,"SELECT ID,name,username,permission_users,permission_books,permission_categories FROM login_data WHERE username='" . htmlspecialchars($_POST["username"]) . "' and password='" . md5(htmlspecialchars($_POST["password"])) . "'");
         $row  = mysqli_fetch_array($result);

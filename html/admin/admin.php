@@ -132,8 +132,8 @@
             document.getElementById("logstable").innerHTML += this.responseText;
             }
           };
-          xhttp.open("GET", "/API/admintools/getLogs.php", true);
-          xhttp.setRequestHeader("Authorization", "Basic " + <?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>);
+          xhttp.open("GET", "/API/admintools/getLog.php", true);
+          xhttp.setRequestHeader("Authorization", "Basic " + "<?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>");
           xhttp.send();
         }
         function loadUsers() {
