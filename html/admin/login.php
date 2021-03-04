@@ -29,10 +29,12 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="../css/adminlogin.css">
+        <link rel="stylesheet" href="../js/admin.js">
     </head>
     <body>
         <div class="formlogin">
             <div class="vertical-center">
+                <h2 style="text-align: center;">Inicia sesión</h2>
                 <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="input-group flex-nowrap formcontrol">
                         <span class="input-group-text" ><i class="bi bi-person-fill"></i></span>
@@ -42,7 +44,8 @@
                         <span class="input-group-text"><i class="bi bi-asterisk"></i></span>
                         <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" aria-label="Amount (to the nearest dollar)">
                     </div>
-                    <div style="text-align: centre; display: flex; justify-content: center;">
+                    <a onclick="alert('WIP');" href="#">Olvide la contraseña</a><br>
+                    <div class="boton">
                         <button type="submit" class="btn btn-primary">Log in</button>
                     </div>
                 <!--<label for="password">Contrase&ntildea</label><br>
