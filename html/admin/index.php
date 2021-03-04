@@ -116,7 +116,41 @@
                   <h1 class="h2">Creacion de usuarios</h1>
                 </div>
                 <button type="button" class="btn btn-success">Crear usuario</button>
-                <button type="button" class="btn btn-danger" data-bs-toggle="modalDeleteusers" data-bs-target="#modalDeleteusers">Eliminar usuario</button>
+                <button type="button" class="btn btn-danger" onclick="deleteModalLoad()" data-bs-toggle="modal" data-bs-target="#modalDeleteUsers">Eliminar usuario</button>
+                <div class="modal fade" id="modalDeleteUsers" tabindex="-1" aria-labelledby="modalDeleteUsersLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalDeleteUsersLabel">Eliminar usuarios</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-sm">
+                              <thead>
+                                <tr>
+                                  <th>ID</th>
+                                  <th>Nombre</th>
+                                  <th>Username</th>
+                                  <th>Permiso libros</th>
+                                  <th>Permiso categorias</th>
+                                  <th>Permiso usuarios</th>
+                                  <th>Eliminar usuario</th>
+                                </tr>
+                              </thead>
+                              <tbody id="userstabledelete">
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <h2>Listado de usuarios</h2>
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
@@ -151,7 +185,9 @@
             firstLoadLogs("logstable", "<?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>");
             firstLoadUsers("userstable", "<?php echo APIADMINTOKEN;?>", '<button type="button" class="btn btn-secondary" onclick="alert(\'wip\')"><i class="bi bi-pencil-square"></i>Editar</button>');
         }
-
+        function deleteModalLoad() {
+            firstLoadUsers("userstabledelete", "<?php echo APIADMINTOKEN;?>", '<button type="button" class="btn btn-secondary" onclick="alert(\'wip\')"><i class="bi bi-person-dash"></i>Eliminar</button>');
+        }
         window.onload = load();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>

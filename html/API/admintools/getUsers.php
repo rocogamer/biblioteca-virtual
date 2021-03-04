@@ -9,19 +9,22 @@
     }
     if(mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) {
-            $permBooks = $row["permission_books"] ? "Si" : "No";
-            $permCategories = $row["permission_categories"] ? "Si" : "No";
-            $permUsers = $row["permission_users"] ? "Si" : "No";
-            echo "<tr>";
-            echo "<td> " . $row["ID"] . "</td>";
-            echo "<td>" . $row["name"] . "</td>";
-            echo "<td>" . $row["username"] . "</td>";
-            echo "<td>" . $permBooks . "</td>";
-            echo "<td>" . $permCategories . "</td>";
-            echo "<td>" . $permUsers . "</td>";
-            echo "<td> ". $_GET['btn'] ." </td>";
-            echo "</tr>";
+            if($row["ID"] != $_SESSION['ID']){
+                $permBooks = $row["permission_books"] ? "Si" : "No";
+                $permCategories = $row["permission_categories"] ? "Si" : "No";
+                $permUsers = $row["permission_users"] ? "Si" : "No";
+                echo "<tr id=row".$row["username"].">";
+                echo "<td id=id".$row["username"]."> " . $row["ID"] . "</td>";
+                echo "<td id=name".$row["username"].">" . $row["name"] . "</td>";
+                echo "<td id=username".$row["username"].">" . $row["username"] . "</td>";
+                echo "<td id=permbook".$row["username"].">" . $permBooks . "</td>";
+                echo "<td id=permcat".$row["username"].">" . $permCategories . "</td>";
+                echo "<td id=permusr".$row["username"].">" . $permUsers . "</td>";
+                echo "<td id=btn".$row["username"]."> ". $_GET['btn'] ." </td>";
+                echo "</tr>";
+            }
             $lastid++;
+            
         }
         $_SESSION['UserLastId'.$_GET['table']] = $lastid;
     } else {
