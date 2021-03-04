@@ -23,3 +23,9 @@
     transition-timing-function: ease;
     transition-delay: 0s;
 }
+.boton{
+    text-align: centre; 
+    padding: 10px; 
+    display: flex; 
+    justify-content: center;;
+}
