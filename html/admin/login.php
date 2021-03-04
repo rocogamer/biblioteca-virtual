@@ -31,12 +31,15 @@
     <body>
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="username"><i class="bi bi-person-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                <span class="input-group-text" ><i class="bi bi-person-fill"></i></span>
+                <input type="text" name="username" id="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
             </div>
             <div class="input-group mb-3">
                     <span class="input-group-text"><i class="bi bi-asterisk"></i></span>
-                    <input type="password" class="form-control" placeholder="Contraseña" aria-label="Amount (to the nearest dollar)">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" aria-label="Amount (to the nearest dollar)">
+            </div>
+            <div style="text-align: centre; display: flex; justify-content: center;">
+                <button type="button" class="btn btn-primary">Primary</button>
             </div>
             <!--<label for="password">Contrase&ntildea</label><br>
             <input type="password" id="password"><br>-->
