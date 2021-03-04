@@ -117,24 +117,9 @@
 
       </div>
     </div>
-    <script>
-        function loadLogs() {
-          var xhttp;
-          xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("logstable").innerHTML += this.responseText;
-            }
-          };
-          xhttp.open("GET", "/API/admintools/getLog.php", true);
-          xhttp.setRequestHeader("Authorization", "Basic " + "<?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>");
-          xhttp.send();
-        }
-        function loadUsers() {
-        
-        }
+    <script src="../js/admin.js">
         function load() {
-            loadLogs();
+            loadLogs("<?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>");
         }
 
         window.onload = load();
