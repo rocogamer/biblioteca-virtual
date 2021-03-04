@@ -18,7 +18,7 @@
         }
     }
     if (isset($_SESSION['ID'])) {
-        Header('Location:admin.php');
+        Header('Location:index.php');
     } 
 ?>
 <!DOCTYPE html>
@@ -32,21 +32,23 @@
     </head>
     <body>
         <div class="formlogin">
-            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                <div class="input-group flex-nowrap">
-                    <span class="input-group-text" ><i class="bi bi-person-fill"></i></span>
-                    <input type="text" name="username" id="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text"><i class="bi bi-asterisk"></i></span>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" aria-label="Amount (to the nearest dollar)">
-                </div>
-                <div style="text-align: centre; display: flex; justify-content: center;">
-                    <button type="submit" class="btn btn-primary">Log in</button>
-                </div>
-            <!--<label for="password">Contrase&ntildea</label><br>
-            <input type="password" id="password"><br>-->
-            </form>
+            <div class="vertical-center">
+                <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <div class="input-group flex-nowrap formcontrol">
+                        <span class="input-group-text" ><i class="bi bi-person-fill"></i></span>
+                        <input type="text" name="username" id="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group mb-3 formcontrol">
+                        <span class="input-group-text"><i class="bi bi-asterisk"></i></span>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" aria-label="Amount (to the nearest dollar)">
+                    </div>
+                    <div style="text-align: centre; display: flex; justify-content: center;">
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                    </div>
+                <!--<label for="password">Contrase&ntildea</label><br>
+                <input type="password" id="password"><br>-->
+                </form>
+            </div>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
