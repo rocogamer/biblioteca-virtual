@@ -13,9 +13,9 @@
             echo "<td> " . $row["ID"] . "</td>";
             echo "<td>" . $row["name"] . "</td>";
             echo "<td>" . $row["username"] . "</td>";
-            echo "<td>" . $row["permission_books"] . "</td>";
-            echo "<td>" . $row["permission_categories"] . "</td>";
-            echo "<td>" . $row["permission_users"] . "</td>";
+            echo "<td>" . $row["permission_books"] ? "Si" : "No" . "</td>";
+            echo "<td>" . $row["permission_categories"] ? "Si" : "No" . "</td>";
+            echo "<td>" . $row["permission_users"] ? "Si" : "No" . "</td>";
             echo "<td> <button class=\"btn btn-success\" type=\"button\" onclick=\"alert('WIP')\"><i class=\"bi bi-pencil-square\"></i>Editar</button> </td>";
             echo "</tr>";
             $lastid++;
