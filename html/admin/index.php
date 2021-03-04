@@ -118,7 +118,7 @@
                 <button type="button" class="btn btn-success">Crear usuario</button>
                 <button type="button" class="btn btn-danger" onclick="deleteModalLoad()" data-bs-toggle="modal" data-bs-target="#modalDeleteUsers">Eliminar usuario</button>
                 <div class="modal fade" id="modalDeleteUsers" tabindex="-1" aria-labelledby="modalDeleteUsersLabel" aria-hidden="true">
-                  <div class="modal-dialog">
+                  <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="modalDeleteUsersLabel">Eliminar usuarios</h5>
@@ -146,11 +146,9 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                       </div>
                     </div>
                   </div>
-                </div>
                 <h2>Listado de usuarios</h2>
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">

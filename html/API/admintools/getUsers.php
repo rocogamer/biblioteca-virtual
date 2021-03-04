@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include('../../../phplibraries/database.php');
     $con = mysqli_connect(DBHOST, DBUSR, DBPASSWD, DBNAME) or die('Unable To connect');
     if (isset($_GET['i'])) {
@@ -9,7 +10,7 @@
     }
     if(mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) {
-            if($row["ID"] != $_SESSION['ID']){
+            if($row["ID"] != $_SESSION["ID"]){
                 $permBooks = $row["permission_books"] ? "Si" : "No";
                 $permCategories = $row["permission_categories"] ? "Si" : "No";
                 $permUsers = $row["permission_users"] ? "Si" : "No";
