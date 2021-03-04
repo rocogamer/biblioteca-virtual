@@ -100,21 +100,21 @@
             </div>
             <?php
             if ($_SESSION["bookpermission"]) {
-              ?>
-            <div class="tab-pane fade" id="books" role="tabpanel" aria-labelledby="books-tab">
-            </div>
+            ?>
+              <div class="tab-pane fade" id="books" role="tabpanel" aria-labelledby="books-tab">
+              </div>
             <?php
             }
             if ($_SESSION["categoriespermission"]) {
             ?>
-            <div class="tab-pane fade" id="categories" role="tabpanel" aria-labelledby="categories-tab">
-            </div>
-            <?php
+              <div class="tab-pane fade" id="categories" role="tabpanel" aria-labelledby="categories-tab">
+              </div>
+             <?php
             }
             if ($_SESSION["userspermission"]) {
             ?>
-            <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
-            </div>
+              <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
+              </div>
             <?php
             }
             ?>
@@ -132,8 +132,8 @@
             document.getElementById("logstable").innerHTML += this.responseText;
             }
           };
-          xhttp.open("GET", "/API/admintools/getLogs.php", true);
-          xhttp.setRequestHeader("Authorization", "Basic " + <?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>);
+          xhttp.open("GET", "/API/admintools/getLog.php", true);
+          xhttp.setRequestHeader("Authorization", "Basic " + "<?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>");
           xhttp.send();
         }
         function loadUsers() {
