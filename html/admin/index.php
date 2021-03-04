@@ -21,6 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/admin.css">
   </head>
   <body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -114,6 +115,8 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                   <h1 class="h2">Creacion de usuarios</h1>
                 </div>
+                <button type="button" class="btn btn-success">Crear usuario</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modalDeleteusers" data-bs-target="#modalDeleteusers">Eliminar usuario</button>
                 <h2>Listado de usuarios</h2>
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
@@ -145,8 +148,8 @@
     </script>
     <script>         
         function load() {
-            loadLogs("logstable", "<?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>");
-            loadUsers("userstable", "<?php echo APIADMINTOKEN;?>");
+            firstLoadLogs("logstable", "<?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>");
+            firstLoadUsers("userstable", "<?php echo APIADMINTOKEN;?>", '<button type="button" class="btn btn-secondary" onclick="alert(\'wip\')"><i class="bi bi-pencil-square"></i>Editar</button>');
         }
 
         window.onload = load();

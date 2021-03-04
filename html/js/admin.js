@@ -10,7 +10,7 @@ function firstLoadLogs($table, $autorizationkey) {
   xhttp.setRequestHeader("Authorization", "Basic " + $autorizationkey);
   xhttp.send();
 }
-function firstLoadUsers($table, $autorizationkey) {
+function firstLoadUsers($table, $autorizationkey, $btn) {
   var xhttp;
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -18,11 +18,11 @@ function firstLoadUsers($table, $autorizationkey) {
       document.getElementById($table).innerHTML += this.responseText;
     }
   };
-  xhttp.open("GET", "../API/admintools/getUsers.php", true);
+  xhttp.open("GET", "../API/admintools/getUsers.php?table="+$table+"&btn="+$btn, true);
   xhttp.setRequestHeader("Authorization", "Basic " + $autorizationkey);
   xhttp.send();
 }
-function newLoadUsers($table, $autorizationkey, $lastIdUsers) {
+function newLoadUsers($table, $autorizationkey, $lastIdUsers, $btn) {
   var xhttp;
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -30,7 +30,7 @@ function newLoadUsers($table, $autorizationkey, $lastIdUsers) {
     document.getElementById($table).innerHTML += this.responseText;
     }
   };
-  xhttp.open("GET", "../API/admintools/getUsers.php?i="+$lastIdUsers, true);
+  xhttp.open("GET", "../API/admintools/getUsers.php?i="+$lastIdUsers+"&table="+$table+"&btn="+$btn, true);
   xhttp.setRequestHeader("Authorization", "Basic " + $autorizationkey);
   xhttp.send();
 }
