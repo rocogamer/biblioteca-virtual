@@ -71,37 +71,51 @@
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <div class="tab-content">
             <div class="tab-pane active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-              <h1 class="h2">Panel de control</h1>
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Panel de control</h1>
+              </div>
+              <h2>Ultima actividad</h2>
+              <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Actividad</th>
+                      <th>Efectuado por:</th>
+                      <th>Fecha y hora:</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>0</td>
+                      <td>Instalacion de la web</td>
+                      <td>Admin</td>
+                      <td>14:40 02/03/2021</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <h2>Ultima actividad</h2>
-            <div class="table-responsive">
-              <table class="table table-striped table-sm">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Actividad</th>
-                    <th>Efectuado por:</th>
-                    <th>Fecha y hora:</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>0</td>
-                    <td>Instalacion de la web</td>
-                    <td>Admin</td>
-                    <td>14:40 02/03/2021</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            </div>
+            <?php
+            if ($_SESSION["bookpermission"]) {
+              ?>
             <div class="tab-pane fade" id="books" role="tabpanel" aria-labelledby="books-tab">
             </div>
+            <?php
+            }
+            if ($_SESSION["categoriespermission"]) {
+            ?>
             <div class="tab-pane fade" id="categories" role="tabpanel" aria-labelledby="categories-tab">
             </div>
+            <?php
+            }
+            if ($_SESSION["userspermission"]) {
+            ?>
             <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
             </div>
+            <?php
+            }
+            ?>
           </div>
         </main>
 

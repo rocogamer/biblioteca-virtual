@@ -3,5 +3,8 @@
     unset($_SESSION["id"]);
     unset($_SESSION["name"]);
     unset($_SESSION["username"]);
+    unset($_SESSION["bookpermission"]);
+    unset($_SESSION["categoriespermission"]);
+    unset($_SESSION["userspermission"]);
     header("Location:login.php");
 ?>
