@@ -7,7 +7,7 @@
         $result = mysqli_query($con,"SELECT ID,name,username,permission_users,permission_books,permission_categories FROM login_data WHERE username='" . htmlspecialchars($_POST["username"]) . "' and password='" . md5(htmlspecialchars($_POST["password"])) . "'");
         $row  = mysqli_fetch_array($result);
         if(is_array($row)) {
-            $_SESSION["ID"] = $row['id'];
+            $_SESSION["ID"] = $row['ID'];
             $_SESSION["name"] = $row['name'];
             $_SESSION["username"] = $row['username'];
             $_SESSION["bookpermission"] = $row['permission_books'];
@@ -39,7 +39,7 @@
                     <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" aria-label="Amount (to the nearest dollar)">
             </div>
             <div style="text-align: centre; display: flex; justify-content: center;">
-                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="submit" class="btn btn-primary">Log in</button>
             </div>
             <!--<label for="password">Contrase&ntildea</label><br>
             <input type="password" id="password"><br>-->

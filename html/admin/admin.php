@@ -88,12 +88,6 @@
                     </tr>
                   </thead>
                   <tbody id="logstable">
-                    <tr>
-                      <td>0</td>
-                      <td>Instalacion de la web</td>
-                      <td>Admin</td>
-                      <td>14:40 02/03/2021</td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
