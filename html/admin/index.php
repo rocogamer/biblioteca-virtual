@@ -49,6 +49,9 @@
                 </a>-->
                 <button class="nav-link active" type="button" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" role="tab" aria-controls="dashboard" aria-selected="true"><i class="bi bi-speedometer2"></i>Panel de control</button>
               </li>
+              <?php
+              if ($_SESSION["bookpermission"]) {
+              ?>
               <li class="nav-item" role="presentation">
                 <!--<a class="nav-link" data-toggle="tab" href="#books">
                   <span data-feather="books"></span>
@@ -56,6 +59,10 @@
                 </a>-->
                 <button class="nav-link" type="button" id="books-tab" data-bs-toggle="tab" data-bs-target="#books" role="tab" aria-controls="books" aria-selected="false"><i class="bi bi-book-half"></i>Gestionar libros</button>
               </li>
+              <?php
+              }
+              if ($_SESSION["categoriespermission"]) {
+              ?>
               <li class="nav-item" role="presentation">
                 <!--<a class="nav-link" data-toggle="tab" href="#categories">
                   <span data-feather="categories"></span>
@@ -63,6 +70,10 @@
                 </a>-->
                 <button class="nav-link" type="button" id="categories-tab" data-bs-toggle="tab" data-bs-target="#categories" role="tab" aria-controls="categories" aria-selected="false"><i class="bi bi-bookmarks-fill"></i>Gestionar categorias</button>
               </li>
+              <?php
+              }
+              if ($_SESSION["userspermission"]) {
+              ?>
               <li class="nav-item" role="presentation">
                 <!--<a class="nav-link" data-toggle="tab" href="#users">
                   <span data-feather="users"></span>
@@ -70,6 +81,9 @@
                 </a>-->
                 <button class="nav-link" type="button" id="users-tab" data-bs-toggle="tab" data-bs-target="#users" role="tab" aria-controls="users" aria-selected="false"><i class="bi bi-people-fill"></i>Gestionar usuarios</button>
               </li>
+              <?php
+              }
+              ?>
             </ul>
           </div>
         </nav>
@@ -173,22 +187,49 @@
             ?>
           </div>
         </main>
-
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../js/admin.js">
     </script>
-    <script>         
+    
+    <script>
+        function deleteUser(autorizationkey, id, username) {
+          var xhttp;
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("row_"+username+"_userstabledelete").remove();
+            }
+          };
+          xhttp.open("GET", "../API/admintools/removeUser.php?userID="+id+"&username="+username, true);
+          xhttp.setRequestHeader("Authorization", "Basic " + autorizationkey);
+          xhttp.send();
+        }         
         function load() {
             firstLoadLogs("logstable", "<?php include("../../phplibraries/apiaccess.php"); echo APIADMINTOKEN;?>");
             firstLoadUsers("userstable", "<?php echo APIADMINTOKEN;?>", '<button type="button" class="btn btn-secondary" onclick="alert(\'wip\')"><i class="bi bi-pencil-square"></i>Editar</button>');
         }
         function deleteModalLoad() {
-            firstLoadUsers("userstabledelete", "<?php echo APIADMINTOKEN;?>", '<button type="button" class="btn btn-secondary" onclick="alert(\'wip\')"><i class="bi bi-person-dash"></i>Eliminar</button>');
+            firstLoadUsers("userstabledelete", "<?php echo APIADMINTOKEN;?>", '<button type="button" class="btn btn-secondary" onclick="deleteUsersBtn($(this).parent().attr(\'id\'))"><i class="bi bi-person-dash"></i>Eliminar</button>');
         }
+        function deleteUsersBtn(btn){
+          alert(btn);
+          var strFormatedInput = btn.split('_')[1]+'_'+btn.split('_')[2];
+          var documentID = 'id_'+strFormatedInput;
+          //alert(document.getElementById(documentID).innerHTML);
+          var intID = Number(document.getElementById(documentID).innerHTML);
+          //alert(intID);
+          var docuemntUsername = 'username_'+strFormatedInput;
+          var strUsername = document.getElementById(docuemntUsername).innerHTML;
+          //alert(strUsername);
+          deleteUser("<?php echo APIADMINTOKEN;?>",intID,strUsername);
+        }
+
         window.onload = load();
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    
   </body>
 </html>

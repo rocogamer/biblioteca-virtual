@@ -36,15 +36,3 @@ function newLoadUsers($table, $autorizationkey, $lastIdUsers, $btn) {
   xhttp.send();
 }
 
-function deleteUser($autorizationkey, $id, $username) {
-  var xhttp;
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("row"+$username).remove();
-    }
-  };
-  xhttp.open("GET", "../API/admintools/getUsers.php?id="+$id+"&usr="+$username, true);
-  xhttp.setRequestHeader("Authorization", "Basic " + $autorizationkey);
-  xhttp.send();
-}
