@@ -5,9 +5,9 @@ Este es un software de una aplicacion de biblioteca virtual
 ## Configuracion
 Para poder configurar esta aplicacion debes editar los siguientes ficheros:
 
-phplibraries/database.php --> Deberas introducir los datos de tu database
-html/API/.htaccess --> Poner la ruta absulata al .htpasswd adjunto o al que quieras usar
-html/API/admintools/.htaccess --> Poner la ruta absulata al .htpasswd adjunto o al que quieras usar
+- phplibraries/database.php --> Deberas introducir los datos de tu database
+- html/API/.htaccess --> Poner la ruta absulata al .htpasswd adjunto o al que quieras usar
+- html/API/admintools/.htaccess --> Poner la ruta absulata al .htpasswd adjunto o al que quieras usar
 
 ## Usuarios predeterminados
 Los usuarios predeterminados la API son estos:
