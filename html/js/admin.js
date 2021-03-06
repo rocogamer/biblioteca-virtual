@@ -1,4 +1,4 @@
-function firstLoadLogs($table, $autorizationkey) {
+function firstLoadLogs($table) {
   document.getElementById($table).innerHTML += '';
   var xhttp;
   xhttp = new XMLHttpRequest();
@@ -8,10 +8,9 @@ function firstLoadLogs($table, $autorizationkey) {
     }
   };
   xhttp.open("GET", "../API/admintools/getLog.php", true);
-  xhttp.setRequestHeader("Authorization", "Basic " + $autorizationkey);
   xhttp.send();
 }
-function firstLoadUsers($table, $autorizationkey, $btn) {
+function firstLoadUsers($table, $btn) {
   var xhttp;
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -20,10 +19,9 @@ function firstLoadUsers($table, $autorizationkey, $btn) {
     }
   };
   xhttp.open("GET", "../API/admintools/getUsers.php?table="+$table+"&btn="+$btn, true);
-  xhttp.setRequestHeader("Authorization", "Basic " + $autorizationkey);
   xhttp.send();
 }
-function newLoadUsers($table, $autorizationkey, $lastIdUsers, $btn) {
+function newLoadUsers($table, $lastIdUsers, $btn) {
   var xhttp;
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -32,10 +30,9 @@ function newLoadUsers($table, $autorizationkey, $lastIdUsers, $btn) {
     }
   };
   xhttp.open("GET", "../API/admintools/getUsers.php?i="+$lastIdUsers+"&table="+$table+"&btn="+$btn, true);
-  xhttp.setRequestHeader("Authorization", "Basic " + $autorizationkey);
   xhttp.send();
 }
-function deleteUser(autorizationkey, id, username) {
+function deleteUser(id, username) {
   $.ajax({
     type: "POST",
     url: "../API/admintools/removeUser.php",
@@ -73,3 +70,24 @@ function deleteUser(autorizationkey, id, username) {
   });
   return false;
 } 
+function load() {
+  firstLoadLogs("logstable");
+  firstLoadUsers("userstable", '<button type="button" class="btn btn-secondary" onclick="alert(\'wip\')"><i class="bi bi-pencil-square"></i>Editar</button>');
+}
+function deleteModalLoad() {
+  firstLoadUsers("userstabledelete",  '<button type="button" class="btn btn-secondary" onclick="deleteUsersBtn($(this).parent().attr(\'id\'))"><i class="bi bi-person-dash"></i>Eliminar</button>');
+}
+function deleteUsersBtn(btn){
+  alert(btn);
+  var strFormatedInput = btn.split('_')[1]+'_'+btn.split('_')[2];
+  var documentID = 'id_'+strFormatedInput;
+  //alert(document.getElementById(documentID).innerHTML);
+  var intID = Number(document.getElementById(documentID).innerHTML);
+  //alert(intID);
+  var docuemntUsername = 'username_'+strFormatedInput;
+  var strUsername = document.getElementById(docuemntUsername).innerHTML;
+  //alert(strUsername);
+  deleteUser(intID,strUsername);
+}
+
+window.onload = load();
