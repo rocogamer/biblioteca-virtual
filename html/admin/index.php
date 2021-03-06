@@ -163,7 +163,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="modal fade" id="modalAddUsers" tabindex="-1" aria-labelledby="modalAddUsersLabel" aria-hidden="true">
+                <div class="modal fade" id="modalAddUsers" tabindex="-1" aria-labelledby="modalAddUsersLabel" aria-hidden="true">
                   <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -177,12 +177,42 @@
                               <input type="text" id="AddUserusername" name="AddUserusername" placeholder="Nombre de usuario (identificador de login)"><br>
                               <input type="password" id="AddUserpwd" name="AddUserpwd" placeholder="Contrase&ntilde;a"><br>
                               <input type="checkbox" id="AddUserbookpermission" name="AddUserbookpermission" value="1">
-                              <label for="bookpermission">Permiso de gestion de libros</label><br>
+                              <label for="AddUserbookpermission">Permiso de gestion de libros</label><br>
                               <input type="checkbox" id="AddUsercategoriespermission" name="AddUsercategoriespermission" value="1">
-                              <label for="categoriespermission">Permiso de gestion de categorias</label><br>
+                              <label for="AddUsercategoriespermission">Permiso de gestion de categorias</label><br>
                               <input type="checkbox" id="AddUseruserspermission" name="AddUseruserspermission" value="1">
-                              <label for="userspermission">Permiso de gestion de usuarios</label><br>
+                              <label for="AddUseruserspermission">Permiso de gestion de usuarios</label><br>
                               <button type="button" onclick="addUserBtn()">Crear usuario</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                <div class="modal fade" id="modalEditUsers" tabindex="-1" aria-labelledby="modalEditUsersLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalEditUsersLabel">Editar usuario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="table-responsive">
+                            <form>
+                              <input type="number" id="EditUserID" name="EditUserID" placeholder="Internal ID NO EDITAR" readonly><br>
+                              <input type="text" id="EditUsername" name="EditUsername" placeholder="Nombre (aqui puede ser nombre y apellidos)"><br>
+                              <input type="text" id="EditUserusername" name="EditUserusername" placeholder="Nombre de usuario (identificador de login)"><br>
+                              <input type="password" id="EditUserpwd" name="EditUserpwd" placeholder="Contrase&ntilde;a"><br>
+                              <input type="checkbox" id="EditUserbookpermission" name="EditUserbookpermission" value="1">
+                              <label for="EditUserbookpermission">Permiso de gestion de libros</label><br>
+                              <input type="checkbox" id="EditUsercategoriespermission" name="EditUsercategoriespermission" value="1">
+                              <label for="EditUsercategoriespermission">Permiso de gestion de categorias</label><br>
+                              <input type="checkbox" id="EditUseruserspermission" name="EditUseruserspermission" value="1">
+                              <label for="EditUseruserspermission">Permiso de gestion de usuarios</label><br>
+                              <button type="button" onclick="editUserBtn()">Editar usuario</button>
                             </form>
                           </div>
                         </div>
