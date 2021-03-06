@@ -147,12 +147,28 @@
               <div class="tab-pane fade" id="categories" role="tabpanel" aria-labelledby="categories-tab">
                   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom">
                     <h1 class="h2">Categorias</h1>
-                    <button type="button" class="btn btn-success" onclick="alert('WIP')" data-bs-toggle="modal" data-bs-target="#modalAddCategory">Crear categoria</button>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAddCategory">Crear categoria</button>
                     <button type="button" class="btn btn-danger" onclick="deleteCatModalLoad()" data-bs-toggle="modal" data-bs-target="#modalDeleteCategory">Eliminar categoria</button>
                     <h2>Listado de categorias</h2>
                   </div>
+                  <div class="modal fade" id="modalAddCategory" tabindex="-1" aria-labelledby="modalAddCategoryLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalAddCategoryLabel">Añadir usuarios</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                        <div class="modal-body">
+                        
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
                   <div class="modal fade" id="modalDeleteCategory" tabindex="-1" aria-labelledby="modalDeleteCategoryLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-xl">
+                    <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="modalDeleteCategoryLabel">Eliminar usuarios</h5>
@@ -165,6 +181,7 @@
                                 <tr>
                                   <th>ID</th>
                                   <th>Nombre</th>
+                                  <th>Eliminar</th>
                                 </tr>
                               </thead>
                               <tbody id="categorytabledelete">

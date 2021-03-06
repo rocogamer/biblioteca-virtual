@@ -44,16 +44,16 @@ function firstLoadCategories(table, btn) {
 function deleteCategory(id, nombre) {
   $.ajax({
     type: "POST",
-    url: "../API/admintools/editCategoriesGestor.php",
+    url: "../API/admintools/removeCategoriesGestor.php",
     dataType: "text",
     data: ({
       "ID": id,
-      "nombre": nombre,
+      "Name": nombre,
     }),
     success: function(data, statusText, jqXHR) {
       if (data == "Category deleted") {
           
-        document.getElementById("row_"+nombre+"_deletecategoriestable").remove();
+        document.getElementById("row_"+nombre+"_categorytabledelete").remove();
         load();
         /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
         var toastList = toastElList.map(function(toastEl) {
@@ -135,7 +135,7 @@ function EditCategoryBtn() {
   editCategory(idBtn, nameBtn);
 }
 function deleteCatModalLoad() {
-  firstLoadCategories("categorytabledelete",  '<button type="button" class="btn btn-secondary" onclick="deleteCategoryBtn($(this).parent().attr(\'id\'))"><i class="bi bi-person-dash"></i>Eliminar</button>');
+  firstLoadCategories("categorytabledelete",  '<button type="button" class="btn btn-secondary" onclick="deleteCategoryBtn($(this).parent().attr(\'id\'))"><i class="bi bi-bookmark-dash"></i>Eliminar</button>');
 }
 
 
