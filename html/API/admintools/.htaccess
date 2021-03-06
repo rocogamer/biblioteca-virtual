@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "admin api authentification"
-AuthUserFile .htpasswd
-Require valid-user
