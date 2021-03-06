@@ -134,7 +134,9 @@ function EditCategoryBtn() {
   var nameBtn = document.getElementById("EditCategoryName").value;
   editCategory(idBtn, nameBtn);
 }
-
+function deleteCatModalLoad() {
+  firstLoadCategories("categorytabledelete",  '<button type="button" class="btn btn-secondary" onclick="deleteCategoryBtn($(this).parent().attr(\'id\'))"><i class="bi bi-person-dash"></i>Eliminar</button>');
+}
 
 
 function addCategory(nombre) {

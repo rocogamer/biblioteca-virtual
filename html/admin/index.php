@@ -93,8 +93,8 @@
             <div class="tab-pane active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
               <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Panel de control</h1>
+                <h2>Ultima actividad</h2>
               </div>
-              <h2>Ultima actividad</h2>
               <div class="table-responsive">
                 <table class="table table-striped table-sm">
                   <thead>
@@ -116,6 +116,9 @@
               <div class="tab-pane fade" id="books" role="tabpanel" aria-labelledby="books-tab">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                   <h1 class="h2">Libros</h1>
+                  <button type="button" class="btn btn-success" onclick="alert('WIP')" data-bs-toggle="modal" data-bs-target="#modalAddBook">Crear libro</button>
+                  <button type="button" class="btn btn-danger" onclick="alert('WIP')" data-bs-toggle="modal" data-bs-target="#modalDeleteBook">Eliminar libro</button>
+                  <h2>Listado de libros</h2>
                 </div>
                 <div class="table-responsive">
                       <table class="table table-striped table-sm">
@@ -142,9 +145,38 @@
             if ($_SESSION["categoriespermission"]) {
             ?>
               <div class="tab-pane fade" id="categories" role="tabpanel" aria-labelledby="categories-tab">
-                  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom">
                     <h1 class="h2">Categorias</h1>
+                    <button type="button" class="btn btn-success" onclick="alert('WIP')" data-bs-toggle="modal" data-bs-target="#modalAddCategory">Crear categoria</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteCatModalLoad()" data-bs-toggle="modal" data-bs-target="#modalDeleteCategory">Eliminar categoria</button>
                     <h2>Listado de categorias</h2>
+                  </div>
+                  <div class="modal fade" id="modalDeleteCategory" tabindex="-1" aria-labelledby="modalDeleteCategoryLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalDeleteCategoryLabel">Eliminar usuarios</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-sm">
+                              <thead>
+                                <tr>
+                                  <th>ID</th>
+                                  <th>Nombre</th>
+                                </tr>
+                              </thead>
+                              <tbody id="categorytabledelete">
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
                   </div>
                   <div class="table-responsive">
                       <table class="table table-striped table-sm">
@@ -167,11 +199,9 @@
               <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom">
                   <h1 class="h2">Usuarios</h1>
-                  <h2>Listado de usuarios</h2>
-                </div>
-                <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                   <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAddUsers">Crear usuario</button>
                   <button type="button" class="btn btn-danger" onclick="deleteModalLoad()" data-bs-toggle="modal" data-bs-target="#modalDeleteUsers">Eliminar usuario</button>
+                  <h2>Listado de usuarios</h2>
                 </div>
                 <div class="modal fade" id="modalDeleteUsers" tabindex="-1" aria-labelledby="modalDeleteUsersLabel" aria-hidden="true">
                   <div class="modal-dialog modal-xl">

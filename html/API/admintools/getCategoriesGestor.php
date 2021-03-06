@@ -23,7 +23,7 @@
             $_SESSION['CategoriesLastId'.$_POST['table']] = $lastid;
         } else {
             echo "<tr>";
-            echo "<td colspan=3> No users </td>";
+            echo "<td colspan=3> No categories </td>";
             echo "</tr>";
         }
     } else {
