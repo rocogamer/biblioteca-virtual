@@ -114,12 +114,53 @@
             if ($_SESSION["bookpermission"]) {
             ?>
               <div class="tab-pane fade" id="books" role="tabpanel" aria-labelledby="books-tab">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                  <h1 class="h2">Libros</h1>
+                </div>
+                <div class="table-responsive">
+                      <table class="table table-striped table-sm">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Autor</th>
+                            <th>Categorias</th>
+                            <th>Enlace externo habilitado?</th>
+                            <th>Texto de url</th>
+                            <th>URL externo</th>
+                            <th>Editar</th>
+                          </tr>
+                        </thead>
+                        <tbody id="bookstable">
+                        </tbody>
+                      </table>
+                    </div>
               </div>
             <?php
             }
             if ($_SESSION["categoriespermission"]) {
             ?>
               <div class="tab-pane fade" id="categories" role="tabpanel" aria-labelledby="categories-tab">
+                <div class="tab-pane fade" id="books" role="tabpanel" aria-labelledby="books-tab">
+                  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Categorias</h1>
+                    <h2>Listado de usuarios</h2>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-sm">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Categoria</th>
+                            <th>Editar categoria</th>
+                          </tr>
+                        </thead>
+                        <tbody id="categoriestable">
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
               </div>
              <?php
             }
@@ -127,7 +168,7 @@
             ?>
               <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                  <h1 class="h2">Creacion de usuarios</h1>
+                  <h1 class="h2">Usuarios</h1>
                 </div>
                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAddUsers">Crear usuario</button>
                 <button type="button" class="btn btn-danger" onclick="deleteModalLoad()" data-bs-toggle="modal" data-bs-target="#modalDeleteUsers">Eliminar usuario</button>
