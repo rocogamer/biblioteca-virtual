@@ -215,16 +215,16 @@
                       <div class="modal-body">
                         <div class="table-responsive">
                             <form>
-                              <input type="text" id="AddUsername" name="AddUsername" placeholder="Nombre (aqui puede ser nombre y apellidos)"><br>
-                              <input type="text" id="AddUserusername" name="AddUserusername" placeholder="Nombre de usuario (identificador de login)"><br>
-                              <input type="password" id="AddUserpwd" name="AddUserpwd" placeholder="Contrase&ntilde;a"><br>
-                              <input type="checkbox" id="AddUserbookpermission" name="AddUserbookpermission" value="1">
-                              <label for="AddUserbookpermission">Permiso de gestion de libros</label><br>
-                              <input type="checkbox" id="AddUsercategoriespermission" name="AddUsercategoriespermission" value="1">
-                              <label for="AddUsercategoriespermission">Permiso de gestion de categorias</label><br>
-                              <input type="checkbox" id="AddUseruserspermission" name="AddUseruserspermission" value="1">
-                              <label for="AddUseruserspermission">Permiso de gestion de usuarios</label><br>
-                              <button type="button" onclick="addUserBtn()">Crear usuario</button>
+                              <input class="form-control" style="width: 50%" type="text" id="AddUsername" name="AddUsername" placeholder="Nombre (aqui puede ser nombre y apellidos)"><br>
+                              <input class="form-control" style="width: 50%" type="text" id="AddUserusername" name="AddUserusername" placeholder="Nombre de usuario (identificador de login)"><br>
+                              <input class="form-control" style="width: 50%" type="password" id="AddUserpwd" name="AddUserpwd" placeholder="Contrase&ntilde;a"><br>
+                              <input class="form-check-input" type="checkbox" id="AddUserbookpermission" name="AddUserbookpermission" value="1">
+                              <label class="form-check-label" for="AddUserbookpermission">Permiso de gestion de libros</label><br>
+                              <input class="form-check-input" type="checkbox" id="AddUsercategoriespermission" name="AddUsercategoriespermission" value="1">
+                              <label class="form-check-label"for="AddUsercategoriespermission">Permiso de gestion de categorias</label><br>
+                              <input class="form-check-input" type="checkbox" id="AddUseruserspermission" name="AddUseruserspermission" value="1">
+                              <label class="form-check-label" for="AddUseruserspermission">Permiso de gestion de usuarios</label><br>
+                              <button class="btn btn-secondary" type="button" onclick="addUserBtn()">Crear usuario</button>
                             </form>
                           </div>
                         </div>
