@@ -21,17 +21,6 @@ function firstLoadUsers($table, $btn) {
   xhttp.open("GET", "../API/admintools/getUsers.php?table="+$table+"&btn="+$btn, true);
   xhttp.send();
 }
-function newLoadUsers($table, $lastIdUsers, $btn) {
-  var xhttp;
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-    document.getElementById($table).innerHTML += this.responseText;
-    }
-  };
-  xhttp.open("GET", "../API/admintools/getUsers.php?i="+$lastIdUsers+"&table="+$table+"&btn="+$btn, true);
-  xhttp.send();
-}
 function deleteUser(id, username) {
   $.ajax({
     type: "POST",
@@ -87,6 +76,7 @@ function addUser(name, username, pwd, bookpermission, categoriespermission, user
       if (data == "User added") {
           
         alert("Usuario agregado");
+        firstLoadUsers("userstable", '<button type="button" class="btn btn-secondary" onclick="alert(\'wip\')"><i class="bi bi-pencil-square"></i>Editar</button>');
         /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
         var toastList = toastElList.map(function(toastEl) {
         // Creates an array of toasts (it only initializes them)
