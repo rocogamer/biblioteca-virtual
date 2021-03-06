@@ -70,6 +70,56 @@ function deleteUser(id, username) {
   });
   return false;
 } 
+function addUser(name, username, pwd, bookpermission, categoriespermission, userspermission) {
+  $.ajax({
+    type: "POST",
+    url: "../API/admintools/AddUser.php",
+    dataType: "text",
+    data: ({
+      "name": name,
+      "username": username,
+      "pwd": pwd,
+      "bookpermission": bookpermission ? "1" : "0",
+      "categoriespermission": categoriespermission ? "1" : "0",
+      "userspermission": userspermission ? "1" : "0"
+    }),
+    success: function(data, statusText, jqXHR) {
+      if (data == "User added") {
+          
+        alert("Usuario agregado");
+        /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+        // Creates an array of toasts (it only initializes them)
+          return new bootstrap.Toast(toastEl) // No need for options; use the default options
+        });
+       toastList.forEach(toast => toast.show()); // This show them*/
+       //console.log("Success");
+        //console.log(data); // Testing to see if it works
+      } else {
+        alert("Ha habido un error al añadir el usuario: "+data);
+        /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+        // Creates an array of toasts (it only initializes them)
+          return new bootstrap.Toast(toastEl) // No need for options; use the default options
+        });
+       toastList.forEach(toast => toast.show()); // This show them*/
+        //console.log("error");
+        //console.log(data); // Testing to see if it works
+      }
+        
+      }
+  });
+  return false;
+} 
+function addUserBtn() {
+  var nameBtn = document.getElementById("AddUsername").value;
+  var usernameBtn = document.getElementById("AddUserusername").value;
+  var pwdBtn = document.getElementById("AddUserpwd").value;
+  var bookpermissionBtn = document.getElementById("AddUserbookpermission").checked;
+  var categoriespermissionBtn = document.getElementById("AddUsercategoriespermission").checked;
+  var userspermissionBtn = document.getElementById("AddUseruserspermission").checked;
+  addUser(nameBtn, usernameBtn, pwdBtn, bookpermissionBtn, categoriespermissionBtn, userspermissionBtn);
+}
 function load() {
   firstLoadLogs("logstable");
   firstLoadUsers("userstable", '<button type="button" class="btn btn-secondary" onclick="alert(\'wip\')"><i class="bi bi-pencil-square"></i>Editar</button>');
