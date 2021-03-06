@@ -25,7 +25,154 @@ function firstLoadUsers(table, btn) {
   });
   return false;
 }
+function firstLoadCategories(table, btn) {
+  $.ajax({
+    type: "POST",
+    url: "../API/admintools/getCategoriesGestor.php",
+    dataType: "text",
+    data: ({
+      "table": table,
+      "btn": btn,
+    }),
+    success: function(data, statusText, jqXHR) {
+      document.getElementById(table).innerHTML = data;
+    }
+  });
+  return false;
+}
 
+function deleteCategory(id, nombre) {
+  $.ajax({
+    type: "POST",
+    url: "../API/admintools/editCategoriesGestor.php",
+    dataType: "text",
+    data: ({
+      "ID": id,
+      "nombre": nombre,
+    }),
+    success: function(data, statusText, jqXHR) {
+      if (data == "Category deleted") {
+          
+        document.getElementById("row_"+nombre+"_deletecategoriestable").remove();
+        load();
+        /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+        // Creates an array of toasts (it only initializes them)
+          return new bootstrap.Toast(toastEl) // No need for options; use the default options
+        });
+       toastList.forEach(toast => toast.show()); // This show them*/
+       //console.log("Success");
+        //console.log(data); // Testing to see if it works
+      } else {
+        alert("Ha habido un error al eliminar el usuario: "+data);
+        /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+        // Creates an array of toasts (it only initializes them)
+          return new bootstrap.Toast(toastEl) // No need for options; use the default options
+        });
+       toastList.forEach(toast => toast.show()); // This show them*/
+        //console.log("error");
+        //console.log(data); // Testing to see if it works
+      }
+        
+      }
+  });
+  return false;
+} 
+function deleteCategoryBtn(btn){
+  var strFormatedInput = btn.split('_')[1]+'_'+btn.split('_')[2];
+  var documentID = 'id_'+strFormatedInput;
+  var intID = Number(document.getElementById(documentID).innerHTML);
+  var docuemntUsername = 'nombre_'+strFormatedInput;
+  var strUsername = document.getElementById(docuemntUsername).innerHTML;
+  deleteCategory(intID,strUsername);
+}
+function addCategoryBtn() {
+  var nameBtn = document.getElementById("AddCategoryName").value;
+  addCategory(nameBtn);
+}
+function editCategory(id, nombre) {
+  $.ajax({
+    type: "POST",
+    url: "../API/admintools/editCategoriesGestor.php",
+    dataType: "text",
+    data: ({
+      "ID": id,
+      "nombre": nombre,
+    }),
+    success: function(data, statusText, jqXHR) {
+      if (data == "Category deleted") {
+          
+        document.getElementById("row_"+nombre+"_deletecategoriestable").remove();
+        load();
+        /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+        // Creates an array of toasts (it only initializes them)
+          return new bootstrap.Toast(toastEl) // No need for options; use the default options
+        });
+       toastList.forEach(toast => toast.show()); // This show them*/
+       //console.log("Success");
+        //console.log(data); // Testing to see if it works
+      } else {
+        alert("Ha habido un error al eliminar el usuario: "+data);
+        /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+        // Creates an array of toasts (it only initializes them)
+          return new bootstrap.Toast(toastEl) // No need for options; use the default options
+        });
+       toastList.forEach(toast => toast.show()); // This show them*/
+        //console.log("error");
+        //console.log(data); // Testing to see if it works
+      }
+        
+      }
+  });
+  return false;
+} 
+function EditCategoryBtn() {
+  var idBtn = document.getElementById("EditCategoryID").value;
+  var nameBtn = document.getElementById("EditCategoryName").value;
+  editCategory(idBtn, nameBtn);
+}
+
+
+
+function addCategory(nombre) {
+  $.ajax({
+    type: "POST",
+    url: "../API/admintools/addCategoriesGestor.php",
+    dataType: "text",
+    data: ({
+      "nombre": nombre,
+    }),
+    success: function(data, statusText, jqXHR) {
+      if (data == "Category added") {
+          
+        load();
+        /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+        // Creates an array of toasts (it only initializes them)
+          return new bootstrap.Toast(toastEl) // No need for options; use the default options
+        });
+       toastList.forEach(toast => toast.show()); // This show them*/
+       //console.log("Success");
+        //console.log(data); // Testing to see if it works
+      } else {
+        alert("Ha habido un error al editar la categoria: "+data);
+        /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+        // Creates an array of toasts (it only initializes them)
+          return new bootstrap.Toast(toastEl) // No need for options; use the default options
+        });
+       toastList.forEach(toast => toast.show()); // This show them*/
+        //console.log("error");
+        //console.log(data); // Testing to see if it works
+      }
+        
+      }
+  });
+  return false;
+} 
 function deleteUser(id, username) {
   $.ajax({
     type: "POST",
@@ -201,7 +348,8 @@ function editUser(id, name, username, pwd, bookpermission, categoriespermission,
 } 
 function load() {
   firstLoadLogs("logstable");
-  firstLoadUsers("userstable", '<button type="button" class="btn btn-secondary" onclick="editUsersLoadBtn($(this).parent().attr(\'id\'))" data-bs-toggle="modal" data-bs-target="#modalEditUsers"><i class="bi bi-pencil-square"></i>Editar</button>');
+  firstLoadUsers("userstable", '<button type="button" class="btn btn-secondary" onclick="editUsersLoadBtn($(this).parent().attr(\'id\'))" data-bs-toggle="modal" data-bs-target="#modalEditUsers"><i class="bi bi-pencil-square"></i> Editar</button>');
+  firstLoadCategories("categoriestable", '<button type="button" class="btn btn-secondary" onclick="" data-bs-toggle="modal" data-bs-target="#modalEditCategory"><i class="bi bi-pencil-square"></i> Editar</button>');
 }
 function deleteModalLoad() {
   firstLoadUsers("userstabledelete",  '<button type="button" class="btn btn-secondary" onclick="deleteUsersBtn($(this).parent().attr(\'id\'))"><i class="bi bi-person-dash"></i>Eliminar</button>');
