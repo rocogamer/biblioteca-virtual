@@ -84,6 +84,13 @@
               <?php
               }
               ?>
+              <li class="nav-item" role="presentation">
+                <!--<a class="nav-link" data-toggle="tab" href="#users">
+                  <span data-feather="users"></span>
+                  Gestionar usuarios
+                </a>-->
+                <button class="nav-link" type="button" id="ajustespersonales-tab" data-bs-toggle="tab" data-bs-target="#ajustespersonales" role="tab" aria-controls="ajustespersonales" aria-selected="false"><i class="bi bi-sliders"></i> Ajustes</button>
+              </li>
             </ul>
           </div>
         </nav>
@@ -129,9 +136,7 @@
                             <th>Descripcion</th>
                             <th>Autor</th>
                             <th>Categorias</th>
-                            <th>Enlace externo habilitado?</th>
-                            <th>Texto de url</th>
-                            <th>URL externo</th>
+                            <th>URL</th>
                             <th>Editar</th>
                           </tr>
                         </thead>
@@ -287,6 +292,7 @@
                             <form class="form-switch">
                               <input class="form-control wdith" type="text" id="AddUsername" name="AddUsername" placeholder="Nombre (aqui puede ser nombre y apellidos)"><br>
                               <input class="form-control wdith" type="text" id="AddUserusername" name="AddUserusername" placeholder="Nombre de usuario (identificador de login)"><br>
+                              <!-- Añadir ver la contraseña -->
                               <input class="form-control wdith" type="password" id="AddUserpwd" name="AddUserpwd" placeholder="Contrase&ntilde;a"><br>
                               <input class="form-check-input" type="checkbox" id="AddUserbookpermission" name="AddUserbookpermission" value="1">
                               <label class="form-check-label" for="AddUserbookpermission">Permiso de gestion de libros</label><br>
@@ -317,6 +323,7 @@
                               <input class="form-control wdithNumber" type="number" id="EditUserID" name="EditUserID" placeholder="Internal ID NO EDITAR" readonly><br>
                               <input class="form-control wdith" type="text" id="EditUsername" name="EditUsername" placeholder="Nombre (aqui puede ser nombre y apellidos)"><br>
                               <input class="form-control wdith" type="text" id="EditUserusername" name="EditUserusername" placeholder="Nombre de usuario (identificador de login)"><br>
+                              <!-- Añadir ver la contraseña -->
                               <input class="form-control wdith" type="password" id="EditUserpwd" name="EditUserpwd" placeholder="Contrase&ntilde;a"><br>
                               <input class="form-check-input" type="checkbox" id="EditUserbookpermission" name="EditUserbookpermission" value="1">
                               <label class="form-check-label" for="EditUserbookpermission">Permiso de gestion de libros</label><br>
@@ -356,6 +363,16 @@
             <?php
             }
             ?>
+          <div class="tab-pane fade" id="ajustespersonales" role="tabpanel" aria-labelledby="ajustespersonales-tab">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                  <h1 class="h2">Ajustes</h1>
+                  <!-- añadir poder añadir una foto personal -->
+                  <h2>Ajustes personales</h2>
+                </div>
+                <div class="table-responsive">
+ 
+                </div>
+              </div>
           </div>
         </main>
         <div aria-live="polite" aria-atomic="true" class="position-relative"  data-bs-delay="10000" data-bs-autohide="true">

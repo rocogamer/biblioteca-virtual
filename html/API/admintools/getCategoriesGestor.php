@@ -6,20 +6,18 @@
         if (isset($_POST['i'])) {
             $result = mysqli_query($con,"SELECT * FROM categorias WHERE ID>".$_POST['i']);
         } else {
-            $result = mysqli_query($con,"SELECT * FROM categorias");
-            $lastid = 0;
+            $result = mysqli_query($con,"SELECT * FROM categorias");    
         }
+        
         if(mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
-                if($row["ID"] != $_SESSION["ID"]){
-                    echo "<tr id=row_".$row["Nombre"]."_".$_POST['table'].">";
-                    echo "<td id=id_".$row["Nombre"]."_".$_POST['table']."> " . $row["ID"] . "</td>";
-                    echo "<td id=nombre_".$row["Nombre"]."_".$_POST['table'].">" . $row["Nombre"] . "</td>";
-                    echo "<td class=\"align\" id=btn_".$row["Nombre"]."_".$_POST['table']."> ". $_POST['btn'] ." </td>";
-                    echo "</tr>";
-                }
+                echo "<tr id=row_".$row["Nombre"]."_".$_POST['table'].">";
+                echo "<td id=id_".$row["Nombre"]."_".$_POST['table']."> " . $row["ID"] . "</td>";
+                echo "<td id=nombre_".$row["Nombre"]."_".$_POST['table'].">" . $row["Nombre"] . "</td>";
+                echo "<td class=\"align\" id=btn_".$row["Nombre"]."_".$_POST['table']."> ". $_POST['btn'] ." </td>";
+                echo "</tr>";
                 $lastid++;
-         }
+            }
             $_SESSION['CategoriesLastId'.$_POST['table']] = $lastid;
         } else {
             echo "<tr>";
