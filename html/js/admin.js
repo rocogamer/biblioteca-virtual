@@ -157,7 +157,7 @@ function addCategory(nombre) {
         }),
         success: function(data, statusText, jqXHR) {
             if (data == "Category added") {
-
+                alert("Categoria agregado");
                 load();
                 /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
         var toastList = toastElList.map(function(toastEl) {
