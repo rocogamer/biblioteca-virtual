@@ -155,11 +155,14 @@
                     <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="modalAddCategoryLabel">Añadir usuarios</h5>
+                        <h5 class="modal-title" id="modalAddCategoryLabel">Añadir categorias</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                         <div class="modal-body">
-                        
+                          <form>
+                            <input class="form-control" type="text" id="AddCategoryName" name="AddCategoryName" placeholder="Nombre de la categoria"><br><br><br>
+                            <button class="btn btn-secondary" type="button" onclick="addCategoryBtn()">Crear categoria</button>
+                          </form>
                         </div>
                       </div>
                       <div class="modal-footer">
@@ -171,7 +174,7 @@
                     <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="modalDeleteCategoryLabel">Eliminar usuarios</h5>
+                        <h5 class="modal-title" id="modalDeleteCategoryLabel">Eliminar categorias</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
