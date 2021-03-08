@@ -291,16 +291,16 @@
                       <div class="modal-body">
                         <div class="table-responsive">
                             <form>
-                              <input type="number" id="EditUserID" name="EditUserID" placeholder="Internal ID NO EDITAR" readonly><br>
-                              <input type="text" id="EditUsername" name="EditUsername" placeholder="Nombre (aqui puede ser nombre y apellidos)"><br>
-                              <input type="text" id="EditUserusername" name="EditUserusername" placeholder="Nombre de usuario (identificador de login)"><br>
-                              <input type="password" id="EditUserpwd" name="EditUserpwd" placeholder="Contrase&ntilde;a"><br>
-                              <input type="checkbox" id="EditUserbookpermission" name="EditUserbookpermission" value="1">
-                              <label for="EditUserbookpermission">Permiso de gestion de libros</label><br>
-                              <input type="checkbox" id="EditUsercategoriespermission" name="EditUsercategoriespermission" value="1">
-                              <label for="EditUsercategoriespermission">Permiso de gestion de categorias</label><br>
-                              <input type="checkbox" id="EditUseruserspermission" name="EditUseruserspermission" value="1">
-                              <label for="EditUseruserspermission">Permiso de gestion de usuarios</label><br>
+                              <input class="form-control" style="width: 50%" type="number" id="EditUserID" name="EditUserID" placeholder="Internal ID NO EDITAR" readonly><br>
+                              <input class="form-control" style="width: 50%" type="text" id="EditUsername" name="EditUsername" placeholder="Nombre (aqui puede ser nombre y apellidos)"><br>
+                              <input class="form-control" style="width: 50%" type="text" id="EditUserusername" name="EditUserusername" placeholder="Nombre de usuario (identificador de login)"><br>
+                              <input class="form-control" style="width: 50%" type="password" id="EditUserpwd" name="EditUserpwd" placeholder="Contrase&ntilde;a"><br>
+                              <input class="form-check-input" type="checkbox" id="EditUserbookpermission" name="EditUserbookpermission" value="1">
+                              <label class="form-check-label" for="EditUserbookpermission">Permiso de gestion de libros</label><br>
+                              <input class="form-check-input" type="checkbox" id="EditUsercategoriespermission" name="EditUsercategoriespermission" value="1">
+                              <label class="form-check-label" for="EditUsercategoriespermission">Permiso de gestion de categorias</label><br>
+                              <input class="form-check-input" type="checkbox" id="EditUseruserspermission" name="EditUseruserspermission" value="1">
+                              <label class="form-check-label" for="EditUseruserspermission">Permiso de gestion de usuarios</label><br>
                               <button type="button" onclick="editUserBtn()">Editar usuario</button>
                             </form>
                           </div>
