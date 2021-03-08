@@ -15,7 +15,7 @@
                     echo "<tr id=row_".$row["Nombre"]."_".$_POST['table'].">";
                     echo "<td id=id_".$row["Nombre"]."_".$_POST['table']."> " . $row["ID"] . "</td>";
                     echo "<td id=nombre_".$row["Nombre"]."_".$_POST['table'].">" . $row["Nombre"] . "</td>";
-                    echo "<td id=btn_".$row["Nombre"]."_".$_POST['table']."> ". $_POST['btn'] ." </td>";
+                    echo "<td class=\"align\" id=btn_".$row["Nombre"]."_".$_POST['table']."> ". $_POST['btn'] ." </td>";
                     echo "</tr>";
                 }
                 $lastid++;

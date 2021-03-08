@@ -22,7 +22,7 @@
                     echo "<td id=permbook_".$row["username"]."_".$_POST['table'].">" . $permBooks . "</td>";
                     echo "<td id=permcat_".$row["username"]."_".$_POST['table'].">" . $permCategories . "</td>";
                     echo "<td id=permusr_".$row["username"]."_".$_POST['table'].">" . $permUsers . "</td>";
-                    echo "<td id=btn_".$row["username"]."_".$_POST['table']."> ". $_POST['btn'] ." </td>";
+                    echo "<td class=\"align\" id=btn_".$row["username"]."_".$_POST['table']."> ". $_POST['btn'] ." </td>";
                     echo "</tr>";
                 }
                 $lastid++;

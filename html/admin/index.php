@@ -345,7 +345,7 @@
                         <th>Permiso libros</th>
                         <th>Permiso categorias</th>
                         <th>Permiso usuarios</th>
-                        <th>Editar usuario</th>
+                        <th class="align">Editar usuario</th>
                       </tr>
                     </thead>
                     <tbody id="userstable">
