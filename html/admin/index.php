@@ -160,7 +160,7 @@
                       </div>
                         <div class="modal-body">
                           <form>
-                            <input class="form-control" type="text" id="" name="AddCategoryName" placeholder="Nombre de la categoria"><br><br><br>
+                            <input class="form-control" type="text" id="AddCategoryName" name="AddCategoryName" placeholder="Nombre de la categoria"><br><br><br>
                             <button class="btn btn-secondary" type="button" onclick="addCategoryBtn()">Crear categoria</button>
                           </form>
                         </div>
