@@ -261,10 +261,10 @@
                       </div>
                       <div class="modal-body">
                         <div class="table-responsive">
-                            <form>
-                              <input class="form-control" style="width: 50%" type="text" id="AddUsername" name="AddUsername" placeholder="Nombre (aqui puede ser nombre y apellidos)"><br>
-                              <input class="form-control" style="width: 50%" type="text" id="AddUserusername" name="AddUserusername" placeholder="Nombre de usuario (identificador de login)"><br>
-                              <input class="form-control" style="width: 50%" type="password" id="AddUserpwd" name="AddUserpwd" placeholder="Contrase&ntilde;a"><br>
+                            <form class="form-switch">
+                              <input class="form-control wdith" type="text" id="AddUsername" name="AddUsername" placeholder="Nombre (aqui puede ser nombre y apellidos)"><br>
+                              <input class="form-control wdith" type="text" id="AddUserusername" name="AddUserusername" placeholder="Nombre de usuario (identificador de login)"><br>
+                              <input class="form-control wdith" type="password" id="AddUserpwd" name="AddUserpwd" placeholder="Contrase&ntilde;a"><br>
                               <input class="form-check-input" type="checkbox" id="AddUserbookpermission" name="AddUserbookpermission" value="1">
                               <label class="form-check-label" for="AddUserbookpermission">Permiso de gestion de libros</label><br>
                               <input class="form-check-input" type="checkbox" id="AddUsercategoriespermission" name="AddUsercategoriespermission" value="1">
@@ -289,12 +289,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <div class="table-responsive">
-                            <form>
-                              <input class="form-control" style="width: 20%" type="number" id="EditUserID" name="EditUserID" placeholder="Internal ID NO EDITAR" readonly><br>
-                              <input class="form-control" style="width: 50%" type="text" id="EditUsername" name="EditUsername" placeholder="Nombre (aqui puede ser nombre y apellidos)"><br>
-                              <input class="form-control" style="width: 50%" type="text" id="EditUserusername" name="EditUserusername" placeholder="Nombre de usuario (identificador de login)"><br>
-                              <input class="form-control" style="width: 50%" type="password" id="EditUserpwd" name="EditUserpwd" placeholder="Contrase&ntilde;a"><br>
+                        <div class="table-responsive centrar">
+                            <form class="form-switch">
+                              <input class="form-control wdithNumber" type="number" id="EditUserID" name="EditUserID" placeholder="Internal ID NO EDITAR" readonly><br>
+                              <input class="form-control wdith" type="text" id="EditUsername" name="EditUsername" placeholder="Nombre (aqui puede ser nombre y apellidos)"><br>
+                              <input class="form-control wdith" type="text" id="EditUserusername" name="EditUserusername" placeholder="Nombre de usuario (identificador de login)"><br>
+                              <input class="form-control wdith" type="password" id="EditUserpwd" name="EditUserpwd" placeholder="Contrase&ntilde;a"><br>
                               <input class="form-check-input" type="checkbox" id="EditUserbookpermission" name="EditUserbookpermission" value="1">
                               <label class="form-check-label" for="EditUserbookpermission">Permiso de gestion de libros</label><br>
                               <input class="form-check-input" type="checkbox" id="EditUsercategoriespermission" name="EditUsercategoriespermission" value="1">
