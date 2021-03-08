@@ -107,9 +107,9 @@ function editCategory(id, nombre) {
             "nombre": nombre,
         }),
         success: function(data, statusText, jqXHR) {
-            if (data == "Category deleted") {
+            if (data == "Category edited") {
 
-                document.getElementById("row_" + nombre + "_deletecategoriestable").remove();
+                alert("Categoria editada");
                 load();
                 /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
         var toastList = toastElList.map(function(toastEl) {
@@ -120,7 +120,7 @@ function editCategory(id, nombre) {
                 //console.log("Success");
                 //console.log(data); // Testing to see if it works
             } else {
-                alert("Ha habido un error al eliminar el usuario: " + data);
+                alert("Ha habido un error al editar la categoria: " + data);
                 /*var toastElList = [].slice.call(document.querySelectorAll('.toast'))
         var toastList = toastElList.map(function(toastEl) {
         // Creates an array of toasts (it only initializes them)
