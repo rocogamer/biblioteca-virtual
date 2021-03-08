@@ -198,6 +198,26 @@
                       </div>
                     </div>
                   </div>
+                  <div class="modal fade" id="modalEditCategory" tabindex="-1" aria-labelledby="modalEditCategoryLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalEditCategoryLabel">Editar categorias</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                        <div class="modal-body">
+                          <form>
+                            <input class="form-control" style="width: 20%" type="number" id="EditCategoryID" name="EditCategoryID" placeholder="Internal ID NO EDITAR" readonly><br>
+                            <input class="form-control" type="text" id="EditCategoryName" name="EditCategoryName" placeholder="Nombre de la categoria"><br><br><br>
+                            <button class="btn btn-secondary" type="button" onclick="EditCategoryBtn()">Editar categoria</button>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
                   <div class="table-responsive">
                       <table class="table table-striped table-sm">
                         <thead>
