@@ -312,7 +312,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <div class="table-responsive centrar">
+                        <div class="table-responsive">
                             <form class="form-switch">
                               <input class="form-control wdithNumber" type="number" id="EditUserID" name="EditUserID" placeholder="Internal ID NO EDITAR" readonly><br>
                               <input class="form-control wdith" type="text" id="EditUsername" name="EditUsername" placeholder="Nombre (aqui puede ser nombre y apellidos)"><br>
