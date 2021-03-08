@@ -47,7 +47,7 @@
                   <span data-feather="home"></span>
                   Panel de control
                 </a>-->
-                <button class="nav-link active" type="button" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" role="tab" aria-controls="dashboard" aria-selected="true"><i class="bi bi-speedometer2"></i>Panel de control</button>
+                <button class="nav-link active" type="button" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" role="tab" aria-controls="dashboard" aria-selected="true"><i class="bi bi-speedometer2"></i> Panel de control</button>
               </li>
               <?php
               if ($_SESSION["bookpermission"]) {
@@ -57,7 +57,7 @@
                   <span data-feather="books"></span>
                   Gestionar libros
                 </a>-->
-                <button class="nav-link" type="button" id="books-tab" data-bs-toggle="tab" data-bs-target="#books" role="tab" aria-controls="books" aria-selected="false"><i class="bi bi-book-half"></i>Gestionar libros</button>
+                <button class="nav-link" type="button" id="books-tab" data-bs-toggle="tab" data-bs-target="#books" role="tab" aria-controls="books" aria-selected="false"><i class="bi bi-book-half"></i> Libros</button>
               </li>
               <?php
               }
@@ -68,7 +68,7 @@
                   <span data-feather="categories"></span>
                   Gestionar categorias
                 </a>-->
-                <button class="nav-link" type="button" id="categories-tab" data-bs-toggle="tab" data-bs-target="#categories" role="tab" aria-controls="categories" aria-selected="false"><i class="bi bi-bookmarks-fill"></i>Gestionar categorias</button>
+                <button class="nav-link" type="button" id="categories-tab" data-bs-toggle="tab" data-bs-target="#categories" role="tab" aria-controls="categories" aria-selected="false"><i class="bi bi-bookmarks-fill"></i> Categorias</button>
               </li>
               <?php
               }
@@ -79,7 +79,7 @@
                   <span data-feather="users"></span>
                   Gestionar usuarios
                 </a>-->
-                <button class="nav-link" type="button" id="users-tab" data-bs-toggle="tab" data-bs-target="#users" role="tab" aria-controls="users" aria-selected="false"><i class="bi bi-people-fill"></i>Gestionar usuarios</button>
+                <button class="nav-link" type="button" id="users-tab" data-bs-toggle="tab" data-bs-target="#users" role="tab" aria-controls="users" aria-selected="false"><i class="bi bi-people-fill"></i> Usuarios</button>
               </li>
               <?php
               }
