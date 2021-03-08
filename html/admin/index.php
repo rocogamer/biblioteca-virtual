@@ -270,7 +270,7 @@
                               <input class="form-check-input" type="checkbox" id="AddUsercategoriespermission" name="AddUsercategoriespermission" value="1">
                               <label class="form-check-label"for="AddUsercategoriespermission">Permiso de gestion de categorias</label><br>
                               <input class="form-check-input" type="checkbox" id="AddUseruserspermission" name="AddUseruserspermission" value="1">
-                              <label class="form-check-label" for="AddUseruserspermission">Permiso de gestion de usuarios</label><br>
+                              <label class="form-check-label" for="AddUseruserspermission">Permiso de gestion de usuarios</label><br><br>
                               <button class="btn btn-secondary" type="button" onclick="addUserBtn()">Crear usuario</button>
                             </form>
                           </div>
@@ -301,7 +301,7 @@
                               <label class="form-check-label" for="EditUsercategoriespermission">Permiso de gestion de categorias</label><br>
                               <input class="form-check-input" type="checkbox" id="EditUseruserspermission" name="EditUseruserspermission" value="1">
                               <label class="form-check-label" for="EditUseruserspermission">Permiso de gestion de usuarios</label><br>
-                              <button type="button" onclick="editUserBtn()">Editar usuario</button>
+                              <button class="btn btn-secondary" type="button" onclick="editUserBtn()">Editar usuario</button>
                             </form>
                           </div>
                         </div>
