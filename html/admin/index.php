@@ -160,7 +160,7 @@
                       </div>
                         <div class="modal-body">
                           <form>
-                            <input class="form-control" type="text" id="AddCategoryName" name="AddCategoryName" placeholder="Nombre de la categoria"><br><br><br>
+                            <input class="form-control wdith" type="text" id="AddCategoryName" name="AddCategoryName" placeholder="Nombre de la categoria"><br><br>
                             <button class="btn btn-secondary" type="button" onclick="addCategoryBtn()">Crear categoria</button>
                           </form>
                         </div>
@@ -207,8 +207,8 @@
                       </div>
                         <div class="modal-body">
                           <form>
-                            <input class="form-control" style="width: 20%" type="number" id="EditCategoryID" name="EditCategoryID" placeholder="Internal ID NO EDITAR" readonly><br>
-                            <input class="form-control" type="text" id="EditCategoryName" name="EditCategoryName" placeholder="Nombre de la categoria"><br><br><br>
+                            <input class="form-control wdithNumber" type="number" id="EditCategoryID" name="EditCategoryID" placeholder="Internal ID NO EDITAR" readonly><br>
+                            <input class="form-control wdith" type="text" id="EditCategoryName" name="EditCategoryName" placeholder="Nombre de la categoria"><br><br><br>
                             <button class="btn btn-secondary" type="button" onclick="EditCategoryBtn()">Editar categoria</button>
                           </form>
                         </div>
@@ -224,7 +224,7 @@
                           <tr>
                             <th>ID</th>
                             <th>Categoria</th>
-                            <th>Editar categoria</th>
+                            <th class="align">Editar categoria</th>
                           </tr>
                         </thead>
                         <tbody id="categoriestable">
