@@ -184,6 +184,14 @@ function addCategory(nombre) {
     return false;
 }
 
+function editCategoryLoadBtn(btn) {
+    var strFormatedInput = btn.split('_')[1] + '_' + btn.split('_')[2];
+    var documentID = 'id_' + strFormatedInput;
+    var documentName = 'nombre_' + strFormatedInput;
+    document.getElementById("EditCategoryID").value = Number(document.getElementById(documentID).innerHTML);
+    document.getElementById("EditCategoryName").value = document.getElementById(documentName).innerHTML;
+}
+
 function deleteUser(id, username) {
     $.ajax({
         type: "POST",
@@ -366,7 +374,7 @@ function editUser(id, name, username, pwd, bookpermission, categoriespermission,
 function load() {
     firstLoadLogs("logstable");
     firstLoadUsers("userstable", '<button type="button" class="btn btn-secondary" onclick="editUsersLoadBtn($(this).parent().attr(\'id\'))" data-bs-toggle="modal" data-bs-target="#modalEditUsers"><i class="bi bi-pencil-square"></i> Editar</button>');
-    firstLoadCategories("categoriestable", '<button type="button" class="btn btn-secondary" onclick="" data-bs-toggle="modal" data-bs-target="#modalEditCategory"><i class="bi bi-pencil-square"></i> Editar</button>');
+    firstLoadCategories("categoriestable", '<button type="button" class="btn btn-secondary" onclick="editCategoryLoadBtn($(this).parent().attr(\'id\'))" data-bs-toggle="modal" data-bs-target="#modalEditCategory"><i class="bi bi-pencil-square"></i> Editar</button>');
 }
 
 function deleteModalLoad() {
